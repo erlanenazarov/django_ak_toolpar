@@ -1,0 +1,74 @@
+{% extends 'views/Base/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Главная - OcOO "Ак Тулпар"{% endblock %}
+
+{% block content %}
+    <div class="padding-20 inline-block">
+        <div class="page-title">Техника под аренду</div>
+        <div class="technical_drop_list" style="display: block;">
+            {% for tech in technic  %}
+                <div class="tech_good">
+                    <div class="tech_good_cat">
+                        {{ tech.subCategory }}
+                    </div>
+                    <div class="tech_good_image">
+                        <div class="tech_good_image_wrap" style="background: url('{{ tech.preview.url }}') center no-repeat; -webkit-background-size: 237px;background-size: 237px; "></div>
+                    </div>
+                    <div class="tech_good_title">
+                        {{ tech.title }}
+                    </div>
+                    <div class="tech_good_description text-size-13">
+                        {% if tech.exploitation %}
+                                    <p class="bold-text text-black-color margin-bottom-4">Эксплуатационная масса, кг:</p>
+                                    <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.exploitation }}</p>
+                                {% endif %}
+                                {% if tech.capacity %}
+                                    <p class="bold-text text-black-color margin-bottom-4">Грузоподъемность, кг:</p>
+                                    <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.capacity }}</p>
+                                {% endif %}
+                                {% if tech.power %}
+                                    <p class="bold-text text-black-color margin-bottom-4">Мощность:</p>
+                                    <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.power }}</p>
+                                {% endif %}
+                                {% if tech.engineVolume %}
+                                    <p class="bold-text text-black-color margin-bottom-4">Объём двигателя:</p>
+                                    <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.engineVolume }}</p>
+                                {% endif %}
+                                {% if tech.maxSpeed %}
+                                    <p class="bold-text text-black-color margin-bottom-4">Макс. скорость:</p>
+                                    <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.maxSpeed }}</p>
+                                {% endif %}
+                                {% if tech.fullMass %}
+                                    <p class="bold-text text-black-color margin-bottom-4">Полная масса:</p>
+                                    <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.fullMass }}</p>
+                                {% endif %}
+                                {% if tech.fuelBank %}
+                                    <p class="bold-text text-black-color margin-bottom-4">Топливный бак:</p>
+                                    <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.fuelBank }}</p>
+                                {% endif %}
+                                {% if tech.amplitude %}
+                                    <p class="bold-text text-black-color margin-bottom-4">Амплитуда:</p>
+                                    <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.amplitude }}</p>
+                                {% endif %}
+                                {% if tech.tankVolume %}
+                                    <p class="bold-text text-black-color margin-bottom-4">Объём цистерны:</p>
+                                    <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.tankVolume }}</p>
+                                {% endif %}
+                                {% if tech.ladleVolume %}
+                                    <p class="bold-text text-black-color margin-bottom-4">Объём ковша:</p>
+                                    <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.ladleVolume }}</p>
+                                {% endif %}
+                                {% if tech.depthDigging %}
+                                    <p class="bold-text text-black-color margin-bottom-4">Глубина копания:</p>
+                                    <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.depthDigging }}</p>
+                                {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="see-more-technical"><a href="{% url 'rent' %}">Посмотреть все</a></div>
+    </div>
+
+{% endblock %}

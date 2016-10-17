@@ -1,0 +1,36 @@
+{% extends 'views/Base/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Построенные объекты - OcOO "Ак Тулпар"{% endblock %}
+
+{% block header_image %}
+    <div class="header_image ">
+        <div class="page_title">
+            ОТ 500$ ЗА КВ.М.<br/>
+            <span>Самые выгодные цены на жильё в Бишкеке</span>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="padding-20">
+        <div class="complex-title">ЖИЛОЙ КОМПЛЕКС «УЛАН-2»</div>
+
+        <div class="complex-content">
+            {% for building in buildings %}
+                <div class="complex-one-building">
+                    <a href="" class="complex-one-building-hover">
+                        <div class="complex-one-building-entry">
+                            <div class="complex-one-building-entry-text">{{ building.title }}</div>
+                        </div>
+                    </a>
+                    <img src="{{ building.preview.url }}"/>
+                </div>
+            {% endfor %}
+        </div>
+
+
+    </div>
+
+{% endblock %}

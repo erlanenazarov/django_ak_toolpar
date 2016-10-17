@@ -1,0 +1,108 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+    {% endblock %}
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+</head>
+<body>
+    {% block header %}
+        <div class="top_nav_bar">
+            <div class="nav_bar">
+                <a href="#">
+                    <div class="main_logo">
+
+                    </div>
+                </a>
+
+                <div class="nav_menu">
+                    <ul class="nav_menu_ul">
+                        <a href="{% url 'index' %}" class="toolpar_links">
+                            <li class="nav_menu_li {% if location == 'home' %}nav_menu_active{% endif %}">ГЛАВНАЯ</li>
+                        </a>
+                        <a href="{% url 'about' %}" class="toolpar_links">
+                            <li class="nav_menu_li {% if location == 'about' %}nav_menu_active{% endif %}">О НАС</li>
+                        </a>
+                        <li class="nav_menu_li {% if location == 'objects' %}nav_menu_active{% endif %}">
+                            ОБЪЕКТЫ
+                            <ul class="submenu">
+                                <li>Построенные</li>
+                                <li>Строящиеся</li>
+                                <li>Проектирумые</li>
+                            </ul>
+                        </li>
+                        <li class="nav_menu_li {% if location == 'services' %}nav_menu_active{% endif %}">
+                            УСЛУГИ
+                            <ul class="submenu">
+                                <li>Строительство</li>
+                                <li><a href="{% url 'rent' %}">Аренда техники</a></li>
+{#                                <li>Проектирование</li>#}
+                            </ul>
+                        </li>
+                        <a href="#" class="toolpar_links {% if location == 'contacts' %}nav_menu_active{% endif %}">
+                            <li class="nav_menu_li">КОНТАКТЫ</li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% block header_image %}
+            <div class="header_image main-image">
+                <div class="page_title">
+                    ОТ 500$ ЗА КВ.М.<br/>
+                    <span>Самые выгодные цены на жильё в Бишкеке</span>
+                </div>
+            </div>
+        {% endblock %}
+    {% endblock %}
+
+    <div class="page_body">
+        {% block content %}
+
+        {% endblock %}
+
+
+        {% block footer %}
+            <div class="pre-footer"></div>
+            <!-- ======================== Footer ============================-->
+            <div class="footer">
+                <div class="footer_background">
+
+                </div>
+                <div class="footer_contacts">
+                    <div class="footer_logo">
+                        <img src="{% static 'images/footer_logo.png' %}"/>
+                    </div>
+                    <div class="footer_contact">
+                        <div>Контакты</div>
+                        + 996 312 90 03 15<br/>
+                        + 996 770 53 50 03<br/>
+                        + 996 770 53 50 08
+                    </div>
+                    <div class="footer_address">
+                        <span>НАШ АДРЕС</span> <br/>
+                        <br/>
+                        Кыргызская Республика, 720083<br/>
+                        г. Бишкек, ул. Шабдан Баатыра 2<br/>
+                        (микрорайон Кок-Жар)<br/>
+                        <br/>
+                        E-mail: <a href="mailto:aktulpar2014@yandex.ru" target="_blank">aktulpar2014@yandex.ru</a>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+
+    </div>
+
+    {% block javascripts %}
+        <script src="{% static 'js/jquery-3.1.0.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.js' %}"></script>
+    {% endblock %}
+</body>
+</html>

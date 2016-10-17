@@ -1,0 +1,206 @@
+{% extends 'views/Base/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Аренда техники - ОсОО "Ак Тулпар"{% endblock %}
+
+{% block header_image %}
+    <div class="header_image image_2">
+        <div class="page_title">
+            Аренда<br />
+            техники
+        </div>
+        <div class="dark_effect"></div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="padding-20 inline-block">
+        {% for category in categories|slice:":4" %}
+            <div class="car_machine">
+                <div class="car_machine_hover" drop-target="#{{ category.id }}" drop-toggle="closed">
+                    {{ category.title }}
+                </div>
+                <img src="{{ category.preview.url }}" />
+            </div>
+        {% endfor %}
+    </div>
+    <div class="padding-20">
+        {% for category in categories|slice:":4" %}
+            <div class="technical_drop_list" id="{{ category.id }}">
+                {% for tech in technic %}
+                    {% if tech.category == category %}
+                        <div class="tech_good">
+                            <div class="tech_good_cat">
+                                {{ tech.subCategory }}
+                            </div>
+                            <div class="tech_good_image">
+                                <div class="tech_good_image_wrap" style="background: url('{{ tech.preview.url }}') center no-repeat; -webkit-background-size: 237px;background-size: 237px; "></div>
+                            </div>
+                            <div class="tech_good_title">
+                                {{ tech.title }}
+                            </div>
+                            <div class="tech_good_description text-size-13">
+                                {% if tech.exploitation %}
+                                    <p class="bold-text text-black-color margin-bottom-4">Эксплуатационная масса, кг:</p>
+                                    <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.exploitation }}</p>
+                                {% endif %}
+                                {% if tech.capacity %}
+                                    <p class="bold-text text-black-color margin-bottom-4">Грузоподъемность, кг:</p>
+                                    <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.capacity }}</p>
+                                {% endif %}
+                                {% if tech.power %}
+                                    <p class="bold-text text-black-color margin-bottom-4">Мощность:</p>
+                                    <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.power }}</p>
+                                {% endif %}
+                                {% if tech.engineVolume %}
+                                    <p class="bold-text text-black-color margin-bottom-4">Объём двигателя:</p>
+                                    <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.engineVolume }}</p>
+                                {% endif %}
+                                {% if tech.maxSpeed %}
+                                    <p class="bold-text text-black-color margin-bottom-4">Макс. скорость:</p>
+                                    <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.maxSpeed }}</p>
+                                {% endif %}
+                                {% if tech.fullMass %}
+                                    <p class="bold-text text-black-color margin-bottom-4">Полная масса:</p>
+                                    <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.fullMass }}</p>
+                                {% endif %}
+                                {% if tech.fuelBank %}
+                                    <p class="bold-text text-black-color margin-bottom-4">Топливный бак:</p>
+                                    <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.fuelBank }}</p>
+                                {% endif %}
+                                {% if tech.amplitude %}
+                                    <p class="bold-text text-black-color margin-bottom-4">Амплитуда:</p>
+                                    <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.amplitude }}</p>
+                                {% endif %}
+                                {% if tech.tankVolume %}
+                                    <p class="bold-text text-black-color margin-bottom-4">Объём цистерны:</p>
+                                    <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.tankVolume }}</p>
+                                {% endif %}
+                                {% if tech.ladleVolume %}
+                                    <p class="bold-text text-black-color margin-bottom-4">Объём ковша:</p>
+                                    <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.ladleVolume }}</p>
+                                {% endif %}
+                                {% if tech.depthDigging %}
+                                    <p class="bold-text text-black-color margin-bottom-4">Глубина копания:</p>
+                                    <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.depthDigging }}</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="padding-20 inline-block">
+        {% for category in categories|slice:"4:8" %}
+            <div class="car_machine">
+                <div class="car_machine_hover" drop-target="#{{ category.id }}" drop-toggle="closed">
+                    {{ category.title }}
+                </div>
+                <img src="{{ category.preview.url }}" />
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="padding-20">
+        {% for category in categories|slice:"4:8" %}
+            <div class="technical_drop_list" id="{{ category.id }}">
+                {% for tech in technic %}
+                    {% if tech.category == category %}
+                        <div class="tech_good">
+                            <div class="tech_good_cat">
+                                {{ tech.subCategory }}
+                            </div>
+                            <div class="tech_good_image">
+                                <div class="tech_good_image_wrap" style="background: url('{{ tech.preview.url }}') center no-repeat; -webkit-background-size: 237px;background-size: 237px; "></div>
+                            </div>
+                            <div class="tech_good_title">
+                                {{ tech.title }}
+                            </div>
+                            <div class="tech_good_description text-size-13">
+                                {% if tech.exploitation %}
+                                    <p class="bold-text text-black-color margin-bottom-4">Эксплуатационная масса, кг:</p>
+                                    <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.exploitation }}</p>
+                                {% endif %}
+                                {% if tech.capacity %}
+                                    <p class="bold-text text-black-color margin-bottom-4">Грузоподъемность, кг:</p>
+                                    <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.capacity }}</p>
+                                {% endif %}
+                                {% if tech.power %}
+                                    <p class="bold-text text-black-color margin-bottom-4">Мощность:</p>
+                                    <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.power }}</p>
+                                {% endif %}
+                                {% if tech.engineVolume %}
+                                    <p class="bold-text text-black-color margin-bottom-4">Объём двигателя:</p>
+                                    <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.engineVolume }}</p>
+                                {% endif %}
+                                {% if tech.maxSpeed %}
+                                    <p class="bold-text text-black-color margin-bottom-4">Макс. скорость:</p>
+                                    <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.maxSpeed }}</p>
+                                {% endif %}
+                                {% if tech.fullMass %}
+                                    <p class="bold-text text-black-color margin-bottom-4">Полная масса:</p>
+                                    <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.fullMass }}</p>
+                                {% endif %}
+                                {% if tech.fuelBank %}
+                                    <p class="bold-text text-black-color margin-bottom-4">Топливный бак:</p>
+                                    <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.fuelBank }}</p>
+                                {% endif %}
+                                {% if tech.amplitude %}
+                                    <p class="bold-text text-black-color margin-bottom-4">Амплитуда:</p>
+                                    <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.amplitude }}</p>
+                                {% endif %}
+                                {% if tech.tankVolume %}
+                                    <p class="bold-text text-black-color margin-bottom-4">Объём цистерны:</p>
+                                    <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.tankVolume }}</p>
+                                {% endif %}
+                                {% if tech.ladleVolume %}
+                                    <p class="bold-text text-black-color margin-bottom-4">Объём ковша:</p>
+                                    <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.ladleVolume }}</p>
+                                {% endif %}
+                                {% if tech.depthDigging %}
+                                    <p class="bold-text text-black-color margin-bottom-4">Глубина копания:</p>
+                                    <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.depthDigging }}</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ block.super }}
+    <script>
+        var drop_lists = $('.car_machine_hover');
+
+
+        $(drop_lists).on('click', function(e) {
+            if($(this).attr('drop-toggle') != 'opened') {
+                $.each($(drop_lists), function() {
+                    if($(this).hasClass('car_machine_active')) {
+                        $(this).removeClass('car_machine_active');
+                        $(this).attr('drop-toggle', 'closed');
+                    }
+                    $($(this).attr('drop-target')).fadeOut('fast');
+                });
+                if(!$(this).hasClass('car_machine_active')) {
+                    $(this).addClass('car_machine_active');
+                }
+                $($(this).attr('drop-target')).fadeIn('slow');
+                $(this).attr('drop-toggle', 'opened');
+            } else {
+                if($(this).hasClass('car_machine_active')) {
+                    $(this).removeClass('car_machine_active');
+                }
+                $($(this).attr('drop-target')).fadeOut('slow');
+                $(this).attr('drop-toggle', 'closed');
+            }
+        });
+    </script>
+{% endblock %}
