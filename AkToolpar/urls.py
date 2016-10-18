@@ -22,6 +22,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 from Technic import views as TechnicViews
 from certificates import views as certificatesView
+from Building import views as BuildingViews
 
 
 urlpatterns = [
@@ -29,7 +30,10 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', TechnicViews.indexAction, name='index'),
     url(r'^services/rent/$', TechnicViews.technicRentAction, name='rent'),
-    url(r'^about/$', certificatesView.aboutAction, name='about')
+    url(r'^about/$', certificatesView.aboutAction, name='about'),
+    url(r'^objects/built$', BuildingViews.builtAction, name='builtObjects'),
+    url(r'^object/(?P<id>[0-9]+)', BuildingViews.oneObjectAction, name='buildingEntrance'),
+    url(r'^objects/under-construction', BuildingViews.builtAction, name='underConstructions')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

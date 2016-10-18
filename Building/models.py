@@ -9,25 +9,27 @@ from django.db import models
 class Object(models.Model):
     class Meta:
         db_table = "buildings"
-        verbose_name = 'Объекты'
+        verbose_name = 'Объект'
         verbose_name_plural = 'Объекты'
 
-    title = models.CharField(max_length=255)
-    location = models.CharField(max_length=255)
-    description = models.TextField()
-    genPlan = models.ImageField(upload_to="")
-    gallery = models.ForeignKey('ObjectGallery')
-    entrance = models.ImageField(upload_to="objects/entrance")
+    title = models.CharField(max_length=255, null=True, blank=True)
+    location = models.CharField(max_length=255, null=True, blank=True)
+    description = models.TextField(blank=True, null=True)
+    genPlan = models.ImageField(upload_to="", null=True, blank=True)
+    gallery = models.ForeignKey('ObjectGallery', null=True)
+    entrance = models.ImageField(upload_to="objects/entrance", null=True, blank=True)
+    built = models.BooleanField(default=True)
+    company = models.ForeignKey('ObjectCompany', null=True, blank=True)
 
     def __unicode__(self):
-        return str(self.title)
+        return self.title
 
 
 class ObjectGallery(models.Model):
     class Meta:
         db_table = "ObjectsGallery"
         verbose_name = 'Галлерея'
-        verbose_name_plural = 'Галлерея'
+        verbose_name_plural = 'Галлереи'
 
     title = models.CharField(max_length=255)
     image = models.ImageField(upload_to="gallery")
@@ -39,7 +41,7 @@ class ObjectGallery(models.Model):
 class ObjectEntrance(models.Model):
     class Meta:
         db_table = 'ObjectEntrance'
-        verbose_name = 'Подъезды'
+        verbose_name = 'Подъезд'
         verbose_name_plural = 'Подъезды'
 
     title = models.CharField(max_length=255)
@@ -53,7 +55,21 @@ class ObjectFlats(models.Model):
     class Meta:
         db_table = 'ObjectFlats'
         verbose_name = 'Планировка квартир'
-        verbose_name_plural = 'Планировка квартир'
+        verbose_name_plural = 'Планировки квартир'
 
     title = models.CharField(max_length=255)
-    
+
+    def __unicode__(self):
+        return self.title
+
+
+class ObjectCompany(models.Model):
+    class Meta:
+        db_table = 'Companies'
+        verbose_name = 'Компания'
+        verbose_name_plural = 'Компании'
+
+    title = models.CharField(max_length=255)
+
+    def __unicode__(self):
+        return self.title

@@ -210,10 +210,15 @@ body {
 
 .side_bar ul li {
     list-style-type: none;
+    width: 240px;
+    height: 150px;
+    position: relative;
+    overflow: hidden;
 }
 
 .side_bar ul li img {
     z-index: 98;
+    width: 100%;
 }
 
 .side_bar ul > a:Hover .side_bar_hover {

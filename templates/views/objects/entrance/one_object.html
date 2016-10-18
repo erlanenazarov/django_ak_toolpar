@@ -1,0 +1,120 @@
+{% extends 'views/Base/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}{{ building.title }} - OcOO "Ак Тулпар"{% endblock %}
+
+{% block header_image %}
+    <div class="header_image" style="background: url('{{ building.entrance.url }}') fixed no-repeat center; background-size: cover;">
+        <div class="dark_effect"></div>
+        <div class="page_title">
+            {{ building.title }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="side_bar">
+        <ul>
+            {% for object in buildings %}
+            <a href="{% url 'buildingEntrance' id=object.id %}">
+                <li>
+                    <div class="side_bar_hover">
+                        <div class="side_bar_info">
+                            {{ object.title }}
+                        </div>
+                    </div>
+                    <img src="{{ object.entrance.url }}"/>
+                </li>
+            </a>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="page_content">
+        <div class="object_title">
+            {{ building.title }}
+        </div>
+        <div class="object_location">
+            <img src="{% static 'images/place.png' %}"/> {{ building.location }}
+        </div>
+        <div class="object_content">
+            <div class="object_description">
+                <div class="description_title">Описание</div>
+                <div class="description_text">
+                    Дома расположены в микрорайоне Улан (г.Бишкек) с развитой инфраструктурой.<br/>
+                    <br/>
+                    К дому подключены:<br/>
+                    - электричество<br/>
+                    - внутренний водопровод и канализация<br/>
+                    - эл. отопление<br/>
+                    - водоснабжение<br/>
+                    - газоснабжение<br/>
+                    <br/>
+                    Все квартиры под самоотделку. Наружное остекление выполнено высоко-качественными стеклопакетами.
+                    Благоустройство двора «под ключ» - озеленение, устройство детской площадки, устройство пандусов в
+                    подъезд.<br/>
+                    Продажа квартир возможна в рассрочку до конца строительства, с индивидуальным подходом к каждому
+                    покупателю
+                </div>
+            </div>
+            <div class="object_images">
+                <div class="show_plane">
+                    <img src="{% static 'images/screpka.png' %}"/>
+                    Показать<br/>
+                    Генплан
+                </div>
+                <div class="image_wrap">
+                    <div class="slider_main_image">
+                        <img src="{{ building.entrance.url }}" width="453px" height="264px"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="object_planing">
+            <div class="object_planing_tabs">
+                <div class="entrance-1 entrance_active">
+                    ПЛАНИРОВКА ПОДЪЕЗДА №1
+                </div>
+                <div class="entrance-2">
+                    ПЛАНИРОВКА ПОДЪЕЗДА №2
+                </div>
+                <div class="ent-1" id="ent1">
+                    <img src="{% static 'images/3-2-2.PNG' %}" usemap="#my_map" width="740px" height="460px"/>
+                    <map name="my_map">
+                        <area class="own_area" href="#" shape="poly"
+                              coords="8,0 , 250,0 , 250,45 , 373,45 , 373,115 , 313,115 , 313,227 , 246,227 , 246,410 , 250,410 , 250,460 , 5,460 , 5,410 , 0,410  , 0,50 , 8,50"/>
+                        <area class="own_area" href="#" shape="poly"
+                              coords="490,4 , 734,4 , 734,50 , 739,50 , 739,410 , 735,460 , 613,460 , 613,227 , 488,227 , 488,55 , 490,55"/>
+                        <area class="own_area" href="#" shape="poly"
+                              coords="614,227 , 614,460 , 250,460 , 250,410 , 246,410 , 246,227"/>
+                    </map>
+                </div>
+                <div class="ent-2" id="ent2">
+                    <img src="{% static 'images/3-1-2.png' %}" width="740px" height="460px"/>
+                </div>
+            </div>
+        </div>
+        <div class="object_flats">
+            <div class="object_flats_title">
+                ВИЗУАЛИЗАЦИЯ КВАРТИР
+            </div>
+            <ul>
+                <li><img src="{% static 'images/render/render1.png' %}"/><br/>
+                    2х комнатная квартира<br/>
+                    <span>Площадь: 79,90 м²</span>
+                </li>
+                <li><img src="{% static 'images/render/render2.png' %}"/><br/>
+                    1 комнатная квартира<br/>
+                    <span>Площадь: 44,80 м²</span>
+                </li>
+                <li><img src="{% static 'images/render/render3.png' %}"/><br/>
+                    1 комнатная квартира<br/>
+                    <span>Площадь: 44,80 м²</span>
+                </li>
+                <li><img src="{% static 'images/render/render4.png' %}"/><br/>
+                    2х комнатная квартира<br/>
+                    <span>Площадь: 67,20 м²</span>
+                </li>
+            </ul>
+        </div>
+{% endblock %}
