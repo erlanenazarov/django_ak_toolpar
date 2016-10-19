@@ -12,6 +12,13 @@ def builtAction(request):
     return render(request, template, params)
 
 
+def objectOnConstruction(request):
+    data = Object.objects.filter(built=0)
+    template = ''
+    params = {'buildings': data}
+    return render(request, template, params)
+
+
 def oneObjectAction(request, id):
     data = Object.objects.get(id=id)
     currentCompany = data.company
@@ -21,4 +28,16 @@ def oneObjectAction(request, id):
         'buildings': allBuildings,
         'building': data
     }
+    return render(request, template, params)
+
+
+def contactsAction(request):
+    template = 'views/Contacts/contacts.html'
+    params = {}
+    return render(request, template, params)
+
+
+def constructionsAction(request):
+    template = 'views/services/construction.html'
+    params = {}
     return render(request, template, params)

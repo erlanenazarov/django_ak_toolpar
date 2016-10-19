@@ -1,0 +1,64 @@
+{% extends 'views/Base/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Контакты{% endblock %}
+
+{% block header_image %}
+    <div class="header_image">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2925.2528858242276!2d74.6324896158662!3d42.84639317915733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389eb65dfaf529ef%3A0x9901864c005f2123!2zMi8xMyDRg9C7LiDQqNCw0LHQtNCw0L0g0LHQsNCw0YLRi9GA0LAsINCR0LjRiNC60LXQug!5e0!3m2!1sru!2skg!4v1476866114704" width="1170" height="480" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="contacts-grid group">
+        <div class="contacts-left-side group">
+            <div class="contacts-side-title">Строительная компания ОсОО «Ак-Тулпар»</div>
+            <div class="contacts-side-group">
+                <div class="contacts-side-key">Адрес:</div>
+                <div class="contacts-side-value">г. Бишкек, ул.Шабдан Баатыра 2</div>
+            </div>
+            <div class="contacts-side-group">
+                <div class="contacts-side-key">Телефон:</div>
+                <div class="contacts-side-value">
+                    +996(312) 900310<br />
+                    +996(312) 900315
+                </div>
+            </div>
+            <div class="contacts-side-group group">
+                <div class="contacts-side-key">Факс:</div>
+                <div class="contacts-side-value">
+                    +996(312) 900311
+                </div>
+            </div>
+            <div class="contacts-side-group group">
+                <div class="contacts-side-key">E-mail:</div>
+                <div class="contacts-side-value">aktulpar2014@yandex.com</div>
+            </div>
+        </div>
+        <div class="contacts-right-side group">
+            <div class="contacts-side-title">Строительная компания ОсОО «Нурлан»</div>
+            <div class="contacts-side-group">
+                <div class="contacts-side-key">Адрес:</div>
+                <div class="contacts-side-value">г. Бишкек, Жил. массив «Кок-Жар»,
+                    ул. Куйручука 12/21</div>
+            </div>
+            <div class="contacts-side-group">
+                <div class="contacts-side-key">Телефон:</div>
+                <div class="contacts-side-value">
+                    +996(312) 900316
+                </div>
+            </div>
+            <div class="contacts-side-group group">
+                <div class="contacts-side-key">Факс:</div>
+                <div class="contacts-side-value">
+                    +996(312) 900311
+                </div>
+            </div>
+            <div class="contacts-side-group group">
+                <div class="contacts-side-key">E-mail:</div>
+                <div class="contacts-side-value">ltd.nurlan@yandex.com</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

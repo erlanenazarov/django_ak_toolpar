@@ -1,0 +1,59 @@
+{% extends 'views/Base/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Строительство{% endblock %}
+
+{% block header_image %}
+    <div class="header_image" style="background: url('{% static 'images/construction.jpg' %}') no-repeat fixed center; -webkit-background-size: cover; background-size: cover; background-position-y: -460px;">
+        <div class="dark_effect"></div>
+        <div class="page_title">
+            УСЛУГИ<br />
+            СТРОИТЕЛЬСТВА
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="page-carcass group">
+        <div>
+            <p class="add-margin-bottom-50">Компания имеет лицензию на осуществление строительных видов деятельности и выполняет:</p>
+        </div>
+        <div class="construction-numeric-ul">
+            <ul>
+                <li class="number">1</li>
+                <li class="delimiter"></li>
+                <li class="number">2</li>
+                <li class="delimiter"></li>
+                <li class="number">3</li>
+                <li class="delimiter"></li>
+                <li class="number">4</li>
+            </ul>
+        </div>
+        <div class="construction-text-ul">
+            <ul>
+                <li>Земляные работы I уровня ответственности</li>
+                <li class="placeholder"></li>
+                <li>Возведение несущих и ограждающих конструкций зданий и сооружений, устройство кровли</li>
+                <li class="placeholder"></li>
+                <li>
+                    -  Монтаж металлических конструкций II уровня ответственности<br />
+                    -  Устройство монолитных бетонных и железобетонных конструкций I уровня ответственности<br />
+                    -  Монтаж сборных бетонных и железобетонных конструкций II уровня ответственности<br />
+                    -  Кладка из камня, кирпича, блоков II уровня ответственности<br />
+                    -  Установка деревянных несущих конструкций и изделий II уровня ответственности
+                </li>
+                <li class="placeholder"></li>
+                <li>Работа по устройству внутренних и наружных инженерных систем, сетей и сооружений III уровня ответственности</li>
+                <li class="placeholder"></li>
+                <li>
+                    -  Трансформаторные подстанции, электроснабжение, линии электропередач (10 кВ)<br />
+                    -  Водоснабжение и канализация<br />
+                    -  Тепловые сети
+                </li>
+                <li class="placeholder"></li>
+                <li>Осуществление функций подрядчика</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

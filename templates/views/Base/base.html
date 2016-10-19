@@ -34,18 +34,18 @@
                             <ul class="submenu">
                                 <li><a href="{% url 'builtObjects' %}">Построенные</a></li>
                                 <li>Строящиеся</li>
-                                <li>Проектирумые</li>
+{#                                <li>Проектирумые</li>#}
                             </ul>
                         </li>
                         <li class="nav_menu_li {% if location == 'services' %}nav_menu_active{% endif %}">
                             УСЛУГИ
                             <ul class="submenu">
-                                <li>Строительство</li>
+                                <li><a href="{% url 'construction' %}">Строительство</a></li>
                                 <li><a href="{% url 'rent' %}">Аренда техники</a></li>
 {#                                <li>Проектирование</li>#}
                             </ul>
                         </li>
-                        <a href="#" class="toolpar_links {% if location == 'contacts' %}nav_menu_active{% endif %}">
+                        <a href="{% url 'contacts' %}" class="toolpar_links {% if location == 'contacts' %}nav_menu_active{% endif %}">
                             <li class="nav_menu_li">КОНТАКТЫ</li>
                         </a>
                     </ul>

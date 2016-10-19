@@ -66,12 +66,24 @@ body {
     padding-left: 0;
 }
 
+.nav_menu_ul > a {
+    color: #000;
+    font-size: 18px;
+    font-family: "HarSansPto-SemiBold", sans-serif;
+    text-decoration: none;
+}
+
+.nav_menu_ul > a:hover {
+    text-decoration: none;
+}
+
 .nav_menu_li {
     height: 60px;
     float: left;
     margin-right: 20px;
     list-style-type: none;
     /*line-height: 150px;*/
+    color: #000;
     font-size: 18px;
     font-family: "HarSansPto-SemiBold", sans-serif;
     position: relative;
@@ -108,6 +120,18 @@ body {
     border-bottom: 1px solid #dedede;
     width: 150px;
     text-align: center;
+}
+
+.submenu li > a {
+    font-family: "HarSansPto-Regular", sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    color: #000;
+}
+
+.submenu li > a {
+    color: #000;
+    text-decoration: none;
 }
 
 .submenu li:last-child {
@@ -195,6 +219,7 @@ body {
     background: url("../images/background.png");
     position: relative;
     z-index: 104;
+    border-top: 1px solid rgba(0, 0, 0, 0);
 }
 
 .side_bar {
@@ -957,4 +982,179 @@ body {
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 
+}
+
+.contacts-grid {
+    width: 1005px;
+    height: auto;
+    position: relative;
+    margin: 60px auto;
+}
+
+.group::before,
+.group::after {
+    content: "";
+    display: table;
+}
+
+.group::after {
+    clear: both;
+}
+
+.group {
+    clear: both;
+    *zoom: 1;
+}
+
+.contacts-left-side {
+    width: 393px;
+    float: left;
+    text-align: left;
+    position: relative;
+}
+
+.contacts-right-side {
+    /*width: 360px;*/
+    position: absolute;
+    right: 0;
+    text-align: left;
+}
+
+.contacts-side-group:after {
+    clear: both;
+}
+
+.contacts-side-group::before,
+.contacts-side-group::after {
+    content: "";
+    display: table;
+}
+
+.contacts-side-group::after {
+    clear: both;
+}
+
+.contacts-side-group {
+    clear: both;
+    *zoom: 1;
+    margin-bottom: 5px;
+}
+
+
+.contacts-side-title {
+    font-family: "HarSansPto-Bold", sans-serif;
+    font-size: 18px;
+    color: #000;
+    margin-bottom: 34px;
+}
+
+.contacts-side-key {
+    font-family: "HarSansPto-SemiBold", sans-serif;
+    font-size: 16px;
+    color: #000;
+    float: left;
+    margin-right: 26px;
+}
+
+.contacts-side-value {
+    font-family: "HarSansPto-Regular", sans-serif;
+    font-size: 16px;
+    color: #000;
+    float: right;
+    text-align: left;
+    width: 291px;
+}
+
+.page-carcass {
+    width: 1020px;
+    height: auto;
+    position: relative;
+    margin: 93px auto;
+    padding-left: 64px;
+    box-sizing: border-box;
+}
+
+.page-carcass p {
+    font-family: "HarSansPto-Regular", sans-serif;
+    font-size: 16px;
+    color: #000;
+}
+
+.page-carcass p.add-margin-bottom-50 {
+    margin-bottom: 50px;
+}
+
+.construction-numeric-ul {
+    float: left;
+}
+
+.construction-numeric-ul ul {
+    padding-left: 0;
+}
+
+.construction-numeric-ul ul li {
+    list-style-type: none;
+}
+
+.construction-numeric-ul ul li.number {
+    width: 49px;
+    height: 49px;
+    border: 1px solid #333a56;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    font-family: "HarSansPto-Bold", sans-serif;
+    font-size: 24px;
+    color: #333a56;
+    text-align: center;
+    line-height: 45px;
+}
+
+.construction-numeric-ul ul li.delimiter {
+    width: 2px;
+    min-height: 17px;
+    background: #333a56;
+    margin-left: 24px;
+}
+
+.construction-numeric-ul ul li.delimiter:nth-child(4) {
+    height: 116px;
+}
+
+
+.construction-numeric-ul ul li.delimiter:nth-child(6) {
+    height: 84px;
+}
+
+.construction-text-ul {
+    float: left;
+    padding-top: 12px;
+}
+
+.construction-text-ul ul {
+    padding-left: 20px;
+}
+
+.construction-text-ul ul li {
+    list-style-type: none;
+    font-family: "HarSansPto-Regular", sans-serif;
+    font-size: 16px;
+    color: #000;
+}
+
+.construction-text-ul ul li.placeholder {
+    height: 43px;
+}
+
+.construction-text-ul ul li:nth-child(4) {
+    height: 15px;
+}
+.construction-text-ul ul li:nth-child(6) {
+    height: 13px;
+}
+.construction-text-ul ul li:nth-child(8) {
+    height: 22px;
+}
+.construction-text-ul ul li:nth-child(10) {
+    height: 20px;
 }

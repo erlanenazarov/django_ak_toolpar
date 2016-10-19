@@ -33,7 +33,9 @@ urlpatterns = [
     url(r'^about/$', certificatesView.aboutAction, name='about'),
     url(r'^objects/built$', BuildingViews.builtAction, name='builtObjects'),
     url(r'^object/(?P<id>[0-9]+)', BuildingViews.oneObjectAction, name='buildingEntrance'),
-    url(r'^objects/under-construction', BuildingViews.builtAction, name='underConstructions')
+    url(r'^objects/under-construction', BuildingViews.builtAction, name='underConstructions'),
+    url(r'^contacts/$', BuildingViews.contactsAction, name='contacts'),
+    url(r'^services/construction/$', BuildingViews.constructionsAction, name='construction')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
