@@ -82,12 +82,14 @@ WSGI_APPLICATION = 'AkToolpar.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
+from parameters import *
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'aktoolpar',
-        'USER': 'root',
-        'PASSWORD': '',
+        'NAME': DB_NAME,
+        'USER': DB_USER,
+        'PASSWORD': DB_PASS,
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }

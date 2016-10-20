@@ -18,3 +18,4 @@ build/
 tests/report/
 .idea
 static
+AkToolpar/parameters.py
