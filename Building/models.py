@@ -1,10 +1,12 @@
 # coding=utf-8
 from __future__ import unicode_literals
 
+from django import forms
 from django.db import models
 
 
 # Create your models here.
+
 
 class Object(models.Model):
     class Meta:
@@ -17,9 +19,17 @@ class Object(models.Model):
     description = models.TextField(blank=True, null=True)
     genPlan = models.ImageField(upload_to="", null=True, blank=True)
     gallery = models.ForeignKey('ObjectGallery', null=True)
-    entrance = models.ImageField(upload_to="objects/entrance", null=True, blank=True)
+    flats = models.ManyToManyField('ObjectFlats', null=True)
+    # entrance = models.ManyToManyField('ObjectEntrance', null=True)
+    entrance1 = models.ImageField(upload_to='entrance', null=True)
+    entrance2 = models.ImageField(upload_to='entrance', null=True)
     built = models.BooleanField(default=True)
+    MY_CHOICES = (
+        ('A', 'ЖК "Улан-2"'),
+        ('B', 'ЖК "Солнечный"'),
+    )
     company = models.ForeignKey('ObjectCompany', null=True, blank=True)
+    livingComplex = models.CharField(max_length=255, null=True, choices=MY_CHOICES)
 
     def __unicode__(self):
         return self.title
@@ -57,7 +67,9 @@ class ObjectFlats(models.Model):
         verbose_name = 'Планировка квартир'
         verbose_name_plural = 'Планировки квартир'
 
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length=255, null=True, blank=True)
+    render = models.ImageField(upload_to='flats/', null=True)
+    description = models.TextField(null=True, blank=True)
 
     def __unicode__(self):
         return self.title

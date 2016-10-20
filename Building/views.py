@@ -6,9 +6,20 @@ from Building.models import Object, ObjectGallery, ObjectEntrance
 # Create your views here.
 
 def builtAction(request):
-    data = Object.objects.raw("SELECT * FROM buildings WHERE built=1")
+    data = Object.objects.filter(built=1)
     template = 'views/objects/built/builtObjects.html'
-    params = {'buildings': data}
+    params = {
+        'buildings': data,
+    }
+    return render(request, template, params)
+
+
+def constructionAction(request):
+    data = Object.objects.filter(built=0)
+    template = 'views/objects/inContruction/construction.html'
+    params = {
+        'buildings': data,
+    }
     return render(request, template, params)
 
 

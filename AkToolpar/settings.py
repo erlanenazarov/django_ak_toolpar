@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 _PATH = os.path.abspath(os.path.dirname(__file__))
 
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static', 'media')
+MEDIA_ROOT = os.path.join(os.path.dirname(_PATH), 'static', 'media')
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
@@ -84,8 +84,12 @@ WSGI_APPLICATION = 'AkToolpar.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'aktoolpar',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
 
@@ -123,7 +127,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static', 'static_root')
+STATIC_ROOT = os.path.join(os.path.dirname(_PATH), 'static', 'static_root')
 
 STATICFILES_DIRS = (
     os.path.join(os.path.dirname(BASE_DIR), 'AkToolpar', 'templates', 'static'),

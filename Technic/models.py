@@ -8,7 +8,7 @@ from django.db import models
 
 class Technic(models.Model):
     class Meta:
-        db_table = 'Technic'
+        db_table = 'technic'
         verbose_name = 'Техника'
         verbose_name_plural = 'Техника'
 

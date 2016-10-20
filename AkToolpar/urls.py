@@ -32,10 +32,11 @@ urlpatterns = [
     url(r'^services/rent/$', TechnicViews.technicRentAction, name='rent'),
     url(r'^about/$', certificatesView.aboutAction, name='about'),
     url(r'^objects/built$', BuildingViews.builtAction, name='builtObjects'),
+    url(r'^objects/in-construction$', BuildingViews.constructionAction, name='constructionObjects'),
     url(r'^object/(?P<id>[0-9]+)', BuildingViews.oneObjectAction, name='buildingEntrance'),
     url(r'^objects/under-construction', BuildingViews.builtAction, name='underConstructions'),
     url(r'^contacts/$', BuildingViews.contactsAction, name='contacts'),
-    url(r'^services/construction/$', BuildingViews.constructionsAction, name='construction')
+    url(r'^services/construction/$', BuildingViews.constructionsAction, name='construction'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

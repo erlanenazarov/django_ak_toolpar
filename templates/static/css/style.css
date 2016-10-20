@@ -917,6 +917,10 @@ body {
     overflow: hidden;
 }
 
+.complex-one-building img {
+    width: 100%;
+}
+
 .complex-one-building:nth-child(2n) {
     margin-right: 0;
 }

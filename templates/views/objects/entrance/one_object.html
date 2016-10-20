@@ -5,7 +5,7 @@
 {% block title %}{{ building.title }} - OcOO "Ак Тулпар"{% endblock %}
 
 {% block header_image %}
-    <div class="header_image" style="background: url('{{ building.entrance.url }}') fixed no-repeat center; background-size: cover;">
+    <div class="header_image" style="background: url('{{ building.gallery.image.url }}') fixed no-repeat center; background-size: cover;">
         <div class="dark_effect"></div>
         <div class="page_title">
             {{ building.title }}
@@ -24,7 +24,7 @@
                             {{ object.title }}
                         </div>
                     </div>
-                    <img src="{{ object.entrance.url }}"/>
+                    <img src="{{ object.gallery.image.url }}"/>
                 </li>
             </a>
             {% endfor %}
@@ -65,7 +65,7 @@
                 </div>
                 <div class="image_wrap">
                     <div class="slider_main_image">
-                        <img src="{{ building.entrance.url }}" width="453px" height="264px"/>
+                        <img src="{{ building.gallery.image.url }}" width="453px" height="264px"/>
                     </div>
                 </div>
             </div>
@@ -79,7 +79,7 @@
                     ПЛАНИРОВКА ПОДЪЕЗДА №2
                 </div>
                 <div class="ent-1" id="ent1">
-                    <img src="{% static 'images/3-2-2.PNG' %}" usemap="#my_map" width="740px" height="460px"/>
+                    <img src="{{ building.entrance1.url }}" usemap="#my_map" width="740px" height="460px"/>
                     <map name="my_map">
                         <area class="own_area" href="#" shape="poly"
                               coords="8,0 , 250,0 , 250,45 , 373,45 , 373,115 , 313,115 , 313,227 , 246,227 , 246,410 , 250,410 , 250,460 , 5,460 , 5,410 , 0,410  , 0,50 , 8,50"/>
@@ -90,7 +90,7 @@
                     </map>
                 </div>
                 <div class="ent-2" id="ent2">
-                    <img src="{% static 'images/3-1-2.png' %}" width="740px" height="460px"/>
+                    <img src="{{ building.entrance2.url }}" width="740px" height="460px"/>
                 </div>
             </div>
         </div>
@@ -99,22 +99,12 @@
                 ВИЗУАЛИЗАЦИЯ КВАРТИР
             </div>
             <ul>
-                <li><img src="{% static 'images/render/render1.png' %}"/><br/>
-                    2х комнатная квартира<br/>
-                    <span>Площадь: 79,90 м²</span>
-                </li>
-                <li><img src="{% static 'images/render/render2.png' %}"/><br/>
-                    1 комнатная квартира<br/>
-                    <span>Площадь: 44,80 м²</span>
-                </li>
-                <li><img src="{% static 'images/render/render3.png' %}"/><br/>
-                    1 комнатная квартира<br/>
-                    <span>Площадь: 44,80 м²</span>
-                </li>
-                <li><img src="{% static 'images/render/render4.png' %}"/><br/>
-                    2х комнатная квартира<br/>
-                    <span>Площадь: 67,20 м²</span>
-                </li>
+                {% for render in building.flats.all %}
+                    <li><img src="{{ render.render.url }}"/><br/>
+                        {{ render.title }}<br/>
+                        <span>{{ render.description }}</span>
+                    </li>
+                {% endfor %}
             </ul>
         </div>
 {% endblock %}
