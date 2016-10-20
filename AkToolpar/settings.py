@@ -132,7 +132,7 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(os.path.dirname(_PATH), 'static', 'static_root')
 
 STATICFILES_DIRS = (
-    os.path.join(os.path.dirname(BASE_DIR), 'AkToolpar', 'templates', 'static'),
+    os.path.join(os.path.dirname(BASE_DIR), ROOT_FOLDER, 'templates', 'static'),
 )
 
 STATICFILES_FINDERS = (
