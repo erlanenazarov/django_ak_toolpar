@@ -3,6 +3,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from Technic.helper import *
 
 # Create your models here.
 
@@ -12,7 +13,7 @@ class Technic(models.Model):
         verbose_name = 'Техника'
         verbose_name_plural = 'Техника'
 
-    preview = models.ImageField(upload_to='technic', verbose_name='Изображение')
+    preview = models.ImageField(upload_to=transform('technic'), verbose_name='Изображение')
     title = models.CharField(max_length=255, verbose_name='Модель')
     capacity = models.CharField(max_length=255, null=True, blank=True, verbose_name='Грузоподъемность')
     power = models.CharField(max_length=255, null=True, blank=True, verbose_name='Мощность')
