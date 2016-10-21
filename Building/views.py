@@ -10,6 +10,7 @@ def builtAction(request):
     template = 'views/objects/built/builtObjects.html'
     params = {
         'buildings': data,
+        'location': 'objects'
     }
     return render(request, template, params)
 
@@ -19,14 +20,8 @@ def constructionAction(request):
     template = 'views/objects/inContruction/construction.html'
     params = {
         'buildings': data,
+        'location': 'objects'
     }
-    return render(request, template, params)
-
-
-def objectOnConstruction(request):
-    data = Object.objects.filter(built=0)
-    template = ''
-    params = {'buildings': data}
     return render(request, template, params)
 
 
@@ -37,18 +32,23 @@ def oneObjectAction(request, id):
     template = 'views/objects/entrance/one_object.html'
     params = {
         'buildings': allBuildings,
-        'building': data
+        'building': data,
+        'location': 'object'
     }
     return render(request, template, params)
 
 
 def contactsAction(request):
     template = 'views/Contacts/contacts.html'
-    params = {}
+    params = {
+        'location': 'contacts'
+    }
     return render(request, template, params)
 
 
 def constructionsAction(request):
     template = 'views/services/construction.html'
-    params = {}
+    params = {
+        'location': 'services'
+    }
     return render(request, template, params)
