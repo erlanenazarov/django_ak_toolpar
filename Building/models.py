@@ -17,7 +17,7 @@ class Object(models.Model):
     title = models.CharField(max_length=255, null=True, blank=True)
     location = models.CharField(max_length=255, null=True, blank=True)
     description = models.TextField(blank=True, null=True)
-    genPlan = models.ImageField(upload_to="", null=True, blank=True)
+    genPlan = models.ImageField(upload_to="gen-plan", null=True, blank=True)
     gallery = models.ForeignKey('ObjectGallery', null=True)
     flats = models.ManyToManyField('ObjectFlats', null=True)
     # entrance = models.ManyToManyField('ObjectEntrance', null=True)

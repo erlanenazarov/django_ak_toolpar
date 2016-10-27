@@ -385,6 +385,7 @@ body {
     font-family: HarSansPto-SemiBold, sans-serif;
     font-size: 13.5px;
     height: 50px;
+    cursor: pointer;
 }
 
 .show_plane img {
@@ -535,9 +536,10 @@ body {
 .object_flats ul li img {
     margin-bottom: 40px;
     width: 196px;
+    cursor: pointer;
 }
 
-.object_flats ul li span {
+.object_flats ul li .flat-description {
     font-family: HarSansPto-Regular, sans-serif;
     font-size: 12px;
 }
@@ -1162,4 +1164,71 @@ body {
 }
 .construction-text-ul ul li:nth-child(10) {
     height: 20px;
+}
+
+.projecting-numeric-ul {
+    vertical-align: top;
+    display: inline-block;
+}
+
+.projecting-numeric-ul ul {
+    padding-left: 0;
+}
+
+.projecting-numeric-ul ul li {
+    list-style-type: none;
+}
+
+.projecting-numeric-ul ul li.number {
+    width: 49px;
+    height: 49px;
+    border: 1px solid #333a56;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    font-family: "HarSansPto-Bold", sans-serif;
+    font-size: 24px;
+    color: #333a56;
+    text-align: center;
+    line-height: 45px;
+}
+
+.projecting-numeric-ul ul li.delimiter {
+    width: 2px;
+    background: #333a56;
+    margin-left: 24px;
+}
+
+.projecting-text-ul {
+    vertical-align: top;
+    width: 800px;
+    display: inline-block;
+    padding-top: 12px;
+}
+
+.projecting-text-ul ul {
+    padding-left: 20px;
+}
+
+.projecting-text-ul ul li {
+    list-style-type: none;
+    font-family: "HarSansPto-Regular", sans-serif;
+    font-size: 16px;
+    color: #000;
+}
+
+.delimiter-space-50 {
+    height: 50px;
+}
+.delimiter-space-27 {
+    height: 27px;
+}
+.delimiter-space-69 {
+    height: 69px;
+}
+.delimiter-space-75 {
+    height: 75px;
+}
+.delimiter-space-133 {
+    height: 133px;
 }

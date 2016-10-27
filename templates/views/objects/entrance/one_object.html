@@ -58,7 +58,7 @@
                 </div>
             </div>
             <div class="object_images">
-                <div class="show_plane">
+                <div class="show_plane gen-planing-view-trigger"  data-toggle="modal" data-target=".gen-planing-view" data-source="{{ building.genPlan.url }}" >
                     <img src="{% static 'images/screpka.png' %}"/>
                     Показать<br/>
                     Генплан
@@ -79,15 +79,7 @@
                     ПЛАНИРОВКА ПОДЪЕЗДА №2
                 </div>
                 <div class="ent-1" id="ent1">
-                    <img src="{{ building.entrance1.url }}" usemap="#my_map" width="740px" height="460px"/>
-                    <map name="my_map">
-                        <area class="own_area" href="#" shape="poly"
-                              coords="8,0 , 250,0 , 250,45 , 373,45 , 373,115 , 313,115 , 313,227 , 246,227 , 246,410 , 250,410 , 250,460 , 5,460 , 5,410 , 0,410  , 0,50 , 8,50"/>
-                        <area class="own_area" href="#" shape="poly"
-                              coords="490,4 , 734,4 , 734,50 , 739,50 , 739,410 , 735,460 , 613,460 , 613,227 , 488,227 , 488,55 , 490,55"/>
-                        <area class="own_area" href="#" shape="poly"
-                              coords="614,227 , 614,460 , 250,460 , 250,410 , 246,410 , 246,227"/>
-                    </map>
+                    <img src="{{ building.entrance1.url }}" width="740px" height="460px"/>
                 </div>
                 <div class="ent-2" id="ent2">
                     <img src="{{ building.entrance2.url }}" width="740px" height="460px"/>
@@ -100,11 +92,32 @@
             </div>
             <ul>
                 {% for render in building.flats.all %}
-                    <li><img src="{{ render.render.url }}"/><br/>
-                        {{ render.title }}<br/>
-                        <span>{{ render.description }}</span>
+                    <li>
+                        <img src="{{ render.render.url }}" data-toggle="modal" data-target=".image-view" class="image-view-trigger" /><br/>
+                        <span class="flat-title">{{ render.title }}</span><br/>
+                        <span class="flat-description">{{ render.description }}</span>
                     </li>
                 {% endfor %}
             </ul>
         </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ block.super }}
+    <script>
+        var trigger = $('.image-view-trigger');
+        var genTrigger = $('.gen-planing-view-trigger');
+
+        $(document).ready(function () {
+            $(trigger).on('click', function (e) {
+                $('#image-view').attr('src', $(this).attr('src'));
+                $('#image-view-modal-label').html($('.flat-title', $(this).parent()).html() + ' > ' + $('.flat-description', $(this).parent()).html());
+            });
+
+            $(genTrigger).on('click', function (e) {
+                $('#gen-planing-view').attr('src', $(this).attr('data-source'));
+            })
+        });
+    </script>
 {% endblock %}

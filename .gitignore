@@ -17,5 +17,5 @@ tests/.coverage
 build/
 tests/report/
 .idea
-static
+/static
 AkToolpar/parameters.py
