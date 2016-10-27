@@ -38,6 +38,7 @@ urlpatterns = [
     url(r'^objects/under-construction', BuildingViews.builtAction, name='underConstructions'),
     url(r'^contacts/$', BuildingViews.contactsAction, name='contacts'),
     url(r'^services/construction/$', BuildingViews.constructionsAction, name='construction'),
+    url(r'^services/design/$', BuildingViews.projectingServiceAction, name='design'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

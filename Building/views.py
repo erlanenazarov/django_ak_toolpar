@@ -52,3 +52,11 @@ def constructionsAction(request):
         'location': 'services'
     }
     return render(request, template, params)
+
+
+def projectingServiceAction(request):
+    template = 'views/services/projecting.html'
+    params = {
+        'location': 'services'
+    }
+    return render(request, template, params)

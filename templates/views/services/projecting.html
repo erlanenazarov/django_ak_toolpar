@@ -1,0 +1,66 @@
+{% extends 'views/Base/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Услуги проектирования{% endblock %}
+
+{% block header_image %}
+    <div class="header_image" style="background: url('{% static 'images/projectingObjects.jpg' %}') fixed no-repeat center; -webkit-background-size: cover; background-size: cover;">
+        <div class="dark_effect"></div>
+        <div class="page_title">
+            УСЛУГИ
+            ПРОЕКТИРОВАНИЯ
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="page-carcass group">
+        <div>
+            <p class="add-margin-bottom-50">Мы выполняем следующие виды услуг проектирования:</p>
+        </div>
+        <div class="projecting-numeric-ul">
+            <ul>
+                <li class="number">1</li>
+                <li class="delimiter delimiter-space-27"></li>
+                <li class="number">2</li>
+                <li class="delimiter delimiter-space-69"></li>
+                <li class="number">3</li>
+                <li class="delimiter delimiter-space-75"></li>
+                <li class="number">4</li>
+                <li class="delimiter delimiter-space-133"></li>
+                <li class="number">5</li>
+            </ul>
+        </div>
+        <div class="projecting-text-ul">
+            <ul>
+                <li>Градостроительные и проектно-изыскательские работы. Градостроительные и проектные работы III уровня ответственности.</li>
+                <li class="placeholder delimiter-space-27"></li>
+                <li>Архитектурное проектирование объектов:</li>
+                <li class="placeholder delimiter-space-27"></li>
+                <li>
+                    -   Жилые дома, общественные здания и сооружения, объекты производственного
+                    назначения (до 3х этажей)
+                </li>
+                <li class="placeholder delimiter-space-27"></li>
+                <li>Строительное проектирование и конструирование</li>
+                <li class="placeholder delimiter-space-27"></li>
+                <li>
+                    -   Жилые дома, общественные здания и сооружения, объекты производственного
+                    назначения (до 3х этажей)
+                </li>
+                <li class="placeholder delimiter-space-27"></li>
+                <li>Проектирование инженерных систем, сетей и сооружений. Проектирование внутренних систем, сетей и сооружений.</li>
+                <li class="placeholder delimiter-space-27"></li>
+                <li>
+                    -   Внутренние сети электроснабжения на напряжение (0,4 кВ)<br />
+                    -   Внутренние сети водоснабжения и канализации технически несложных
+                    объектов<br />
+                    -   Внутренние системы теплоснабжения технически несложных объектов<br />
+                </li>
+                <li class="placeholder delimiter-space-50"></li>
+                <li>Осуществление функции генерального проектировщика</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

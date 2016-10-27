@@ -1,2 +1,2 @@
-django-jet,
+django-jet
 pillow
