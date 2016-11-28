@@ -17,18 +17,16 @@
         <div class="complex-title">ЖИЛОЙ КОМПЛЕКС «УЛАН-2»</div>
 
         <div class="complex-content">
-            {% for building in buildings %}
-                {% if building.company.id == 1 %}
-                    <div class="complex-one-building">
-                        <a href="{% url 'buildingEntrance' id=building.id %}" class="complex-one-building-hover">
-                            <div class="complex-one-building-entry">
-                                <div class="complex-one-building-entry-text">{{ building.title }}</div>
-                            </div>
-                        </a>
-                        <img src="{{ building.gallery.image.url }}"/>
-                    </div>
-                {% endif %}
-            {% endfor %}
+            <div class="complex-photos">
+                <ul>
+                    <li><img src="{% static 'images/photos/IMG_3384.JPG' %}"/> </li>
+                    <li><img src="{% static 'images/photos/IMG_3392.JPG' %}"/> </li>
+                    <li><img src="{% static 'images/photos/IMG_3393.JPG' %}"/> </li>
+                </ul>
+            </div>
+            <div class="complex-planing">
+
+            </div>
         </div>
 
         <div class="complex-title">ЖИЛОЙ КОМПЛЕКС «Солнечный»</div>
