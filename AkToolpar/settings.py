@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 _PATH = os.path.abspath(os.path.dirname(__file__))
 
-MEDIA_ROOT = os.path.join(os.path.dirname(_PATH), 'static', 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media')
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
