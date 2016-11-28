@@ -2,6 +2,11 @@
 
 {% load staticfiles %}
 
+{% block stylesheets %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/magnific-popup.css' %}"/>
+{% endblock %}
+
 {% block title %}Построенные объекты - OcOO "Ак Тулпар"{% endblock %}
 
 {% block header_image %}
@@ -12,6 +17,12 @@
     </div>
 {% endblock %}
 
+{% block handlers %}
+    <div class="modal">
+
+    </div>
+{% endblock %}
+
 {% block content %}
     <div class="padding-20">
         <div class="complex-title">ЖИЛОЙ КОМПЛЕКС «УЛАН-2»</div>
@@ -19,13 +30,50 @@
         <div class="complex-content">
             <div class="complex-photos">
                 <ul>
-                    <li><img src="{% static 'images/photos/IMG_3384.JPG' %}"/> </li>
-                    <li><img src="{% static 'images/photos/IMG_3392.JPG' %}"/> </li>
-                    <li><img src="{% static 'images/photos/IMG_3393.JPG' %}"/> </li>
+                    <li><img src="{% static 'images/photos/IMG_3384.JPG' %}"/></li>
+                    <li><img src="{% static 'images/photos/IMG_3392.JPG' %}"/></li>
+                    <li><img src="{% static 'images/photos/IMG_3393.JPG' %}"/></li>
                 </ul>
             </div>
             <div class="complex-planing">
-
+                <ul>
+                    <li>
+                        <div class="complex-context">
+                            <img src="{% static 'images/3-2-2.PNG' %}" width="740" height="460" usemap="#3-2-2"/>
+                            <map name="3-2-2">
+                                <a class="own_area" href="{% static 'images/planing/2/1.1.jpg' %}">
+                                    <area shape="poly"
+                                          data-toggle="modal"
+                                          coords="8,0 , 250,0 , 250,45 , 373,45 , 373,115 , 313,115 , 313,227 , 246,227 , 246,410 , 250,410 , 250,460 , 5,460 , 5,410 , 0,410  , 0,50 , 8,50"/>
+                                </a>
+                                <area class="own_area" href="{% static 'images/planing/2/1.3.jpg' %}" shape="poly"
+                                      data-toggle="modal"
+                                      coords="490,4 , 734,4 , 734,50 , 739,50 , 739,410 , 735,460 , 613,460 , 613,227 , 488,227 , 488,55 , 490,55"/>
+                                <area class="own_area" href="{% static 'images/planing/2/1.2.jpg' %}" shape="poly"
+                                      data-toggle="modal"
+                                      coords="614,227 , 614,460 , 250,460 , 250,410 , 246,410 , 246,227"/>
+                            </map>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="complex-context">
+                            <img src="{% static 'images/3-1-2.png' %}" width="740" height="460" usemap="#3-1-2"/>
+                            <map name="3-1-2">
+                                <a class="own_area" href="{% static 'images/planing/4/3.1.jpg' %}">
+                                    <area shape="poly"
+                                          data-toggle="modal"
+                                          coords="12,3 , 251,3 , 250,45 , 251,44 , 373,44 , 373,114 , 313,114 , 313,227 , 246,227 , 128,227 , 128,457 , 250,460 , 8,457 , 8,411  , 3,411 , 3,49 , 12,49"/>
+                                </a>
+                                <area class="own_area" href="{% static 'images/planing/4/3.2.jpg' %}" shape="poly"
+                                      data-toggle="modal"
+                                      coords="490,4 , 734,4 , 734,50 , 739,50 , 739,410 , 735,460 , 613,460 , 613,227 , 488,227 , 488,55 , 490,55"/>
+                                <area class="own_area" href="{% static 'images/planing/4/3.3.jpg' %}" shape="poly"
+                                      data-toggle="modal"
+                                      coords="614,227 , 614,460 , 250,460 , 250,410 , 246,410 , 246,227"/>
+                            </map>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
 
@@ -47,4 +95,22 @@
         </div>
     </div>
 
+{% endblock %}
+
+{% block javascripts %}
+    {{ block.super }}
+
+    <script src="{% static 'js/jquery.magnific-popup.js' %}"></script>
+    <script>
+        var magnificTrigger = $('.own_area');
+        $(magnificTrigger).bind('click', function (e) {
+            e.preventDefault();
+            $.magnificPopup.open({
+                items: {
+                    src: $(this).attr('href')
+                },
+                type: 'image'
+            });
+        })
+    </script>
 {% endblock %}
