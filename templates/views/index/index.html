@@ -5,6 +5,7 @@
     {{ block.super }}
     <link rel="stylesheet" type="text/css" href="{% static 'css/slick.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'css/slick-theme.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/magnific-popup.css' %}" />
 {% endblock %}
 {% block title %}Главная - OcOO "Ак Тулпар"{% endblock %}
 
@@ -30,9 +31,18 @@
 
 {% block content %}
     <div class="padding-20 inline-block">
-        <div class="complex-title">Фото-галлерея</div>
+        <div class="complex-title">Фотогаллерея</div>
         <div class="photo-gallery">
-            <img src="{% static '' %}" />
+            <div class="complex-photos">
+                <ul>
+                    <li><a href="{% static 'images/photos/IMG_3384.JPG' %}" class="overlay-trigger"><img src="{% static 'images/photos/IMG_3384.JPG' %}"/></a></li>
+                    <li><a href="{% static 'images/photos/IMG_3392.JPG' %}" class="overlay-trigger"><img src="{% static 'images/photos/IMG_3392.JPG' %}"/></a></li>
+                    <li><a href="{% static 'images/photos/IMG_3393.JPG' %}" class="overlay-trigger"><img src="{% static 'images/photos/IMG_3393.JPG' %}"/></a></li>
+                    <li><a href="{% static 'images/photos/IMG_3373.JPG' %}" class="overlay-trigger"><img src="{% static 'images/photos/IMG_3373.JPG' %}"/></a></li>
+                    <li><a href="{% static 'images/photos/IMG_3374.JPG' %}" class="overlay-trigger"><img src="{% static 'images/photos/IMG_3374.JPG' %}"/></a></li>
+                    <li><a href="{% static 'images/photos/IMG_3380.JPG' %}" class="overlay-trigger"><img src="{% static 'images/photos/IMG_3380.JPG' %}"/></a></li>
+                </ul>
+            </div>
         </div>
     </div>
 
@@ -40,14 +50,22 @@
 
 {% block javascripts %}
     {{ block.super }}
+    <script src="{% static 'js/jquery.magnific-popup.js' %}"></script>
     <script src="{% static 'js/slick.js' %}"></script>
     <script>
         $('#header-slider').slick({
             infinite: true,
-            speed: 300,
-            arrows: false,
+            speed: 500,
+            arrows: true,
             dots: true,
-            autoplay: true
+            autoplay: true,
+        });
+
+        $('.overlay-trigger').magnificPopup({
+            type: 'image',
+            zoom: {
+                enabled: true
+            }
         });
     </script>
 {% endblock %}

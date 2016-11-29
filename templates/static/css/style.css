@@ -1247,6 +1247,7 @@ body {
 
 .complex-photos {
     width: 100%;
+    text-align: center;
 }
 
 .complex-photos ul {
