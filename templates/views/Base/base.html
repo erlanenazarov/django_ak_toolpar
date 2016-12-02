@@ -6,175 +6,177 @@
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
     {% block stylesheets %}
-        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
-        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/newstyle.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"/>
     {% endblock %}
     <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
 </head>
 <body>
-    <div class="modal fade image-view" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="image-viewer">
-      <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-                  <h4 class="modal-title" id="image-view-modal-label"></h4>
-              </div>
-              <div class="modal-body">
-                  <img src="" id="image-view" />
-              </div>
-          </div>
-      </div>
+<div class="modal fade image-view" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"
+     id="image-viewer">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h4 class="modal-title" id="image-view-modal-label"></h4>
+            </div>
+            <div class="modal-body">
+                <img src="" id="image-view"/>
+            </div>
+        </div>
     </div>
-    <div class="modal fade gen-planing-view" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-                  <h4 class="modal-title">Генплан</h4>
-              </div>
-              <div class="modal-body">
-                  <img src="" id="gen-planing-view" />
-              </div>
-          </div>
-      </div>
+</div>
+<div class="modal fade gen-planing-view" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h4 class="modal-title">Генплан</h4>
+            </div>
+            <div class="modal-body">
+                <img src="" id="gen-planing-view"/>
+            </div>
+        </div>
     </div>
-    {% block header %}
-        <div class="top_nav_bar">
-            <div class="nav_bar">
-                <a href="#">
-                    <div class="main_logo">
+</div>
+{% block header %}
+    <div class="top_nav_bar">
+        <div class="nav_bar">
+            <a href="#">
+                <div class="main_logo">
 
-                    </div>
-                </a>
+                </div>
+            </a>
 
-                <div class="nav_menu">
-                    <ul class="nav_menu_ul">
-                        <a href="{% url 'index' %}" class="toolpar_links">
-                            <li class="nav_menu_li {% if location == 'home' %}nav_menu_active{% endif %}">ГЛАВНАЯ</li>
-                        </a>
-                        <a href="{% url 'about' %}" class="toolpar_links">
-                            <li class="nav_menu_li {% if location == 'about' %}nav_menu_active{% endif %}">О НАС</li>
-                        </a>
-                        <li class="nav_menu_li {% if location == 'objects' %}nav_menu_active{% endif %}">
-                            ОБЪЕКТЫ
-                            <ul class="submenu">
-                                <li><a href="{% url 'builtObjects' %}">Построенные</a></li>
-                                <li><a href="{% url 'constructionObjects' %}">Строящиеся</a></li>
-{#                                <li>Проектирумые</li>#}
-                            </ul>
-                        </li>
-                        <li class="nav_menu_li {% if location == 'services' %}nav_menu_active{% endif %}">
-                            УСЛУГИ
-                            <ul class="submenu">
-                                <li><a href="{% url 'construction' %}">Строительство</a></li>
-                                <li><a href="{% url 'rent' %}">Аренда техники</a></li>
-                                <li><a href="{% url 'design' %}">Проектирование</a></li>
-                            </ul>
-                        </li>
-                        <a href="{% url 'contacts' %}" class="toolpar_links {% if location == 'contacts' %}nav_menu_active{% endif %}">
-                            <li class="nav_menu_li {% if location == 'contacts' %}nav_menu_active{% endif %}">КОНТАКТЫ</li>
-                        </a>
-                    </ul>
+            <div class="nav_menu">
+                <ul class="nav_menu_ul">
+                    <a href="{% url 'index' %}" class="toolpar_links">
+                        <li class="nav_menu_li {% if location == 'home' %}nav_menu_active{% endif %}">ГЛАВНАЯ</li>
+                    </a>
+                    <a href="{% url 'about' %}" class="toolpar_links">
+                        <li class="nav_menu_li {% if location == 'about' %}nav_menu_active{% endif %}">О НАС</li>
+                    </a>
+                    <li class="nav_menu_li {% if location == 'objects' %}nav_menu_active{% endif %}">
+                        ОБЪЕКТЫ
+                        <ul class="submenu">
+                            <li><a href="{% url 'builtObjects' %}">Построенные</a></li>
+                            <li><a href="{% url 'constructionObjects' %}">Строящиеся</a></li>
+                            {#                                <li>Проектирумые</li>#}
+                        </ul>
+                    </li>
+                    <li class="nav_menu_li {% if location == 'services' %}nav_menu_active{% endif %}">
+                        УСЛУГИ
+                        <ul class="submenu">
+                            <li><a href="{% url 'construction' %}">Строительство</a></li>
+                            <li><a href="{% url 'rent' %}">Аренда техники</a></li>
+                            <li><a href="{% url 'design' %}">Проектирование</a></li>
+                        </ul>
+                    </li>
+                    <a href="{% url 'contacts' %}"
+                       class="toolpar_links {% if location == 'contacts' %}nav_menu_active{% endif %}">
+                        <li class="nav_menu_li {% if location == 'contacts' %}nav_menu_active{% endif %}">КОНТАКТЫ</li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% block header_image %}
+        <div class="header_image main-image">
+            <div class="page_title">
+                ОТ 500$ ЗА КВ.М.<br/>
+                <span>Самые выгодные цены на жильё в Бишкеке</span>
+            </div>
+        </div>
+    {% endblock %}
+{% endblock %}
+
+<div class="page_body">
+    {% block content %}
+
+    {% endblock %}
+
+
+    {% block footer %}
+        <div class="pre-footer"></div>
+        <!-- ======================== Footer ============================-->
+        <div class="footer">
+            <div class="footer_background">
+
+            </div>
+            <div class="footer_contacts">
+                <div class="footer_logo">
+                    <img src="{% static 'images/footer_logo.png' %}"/>
+                </div>
+                <div class="footer_contact">
+                    <div>Контакты</div>
+                    + 996 312 90 03 15<br/>
+                    + 996 770 53 50 03<br/>
+                    + 996 770 53 50 08
+                </div>
+                <div class="footer_address">
+                    <span>НАШ АДРЕС</span> <br/>
+                    <br/>
+                    Кыргызская Республика, 720083<br/>
+                    г. Бишкек, ул. Шабдан Баатыра 2<br/>
+                    (микрорайон Кок-Жар)<br/>
+                    <br/>
+                    E-mail: <a href="mailto:aktulpar2014@yandex.ru" target="_blank">aktulpar2014@yandex.ru</a>
                 </div>
             </div>
         </div>
-        {% block header_image %}
-            <div class="header_image main-image">
-                <div class="page_title">
-                    ОТ 500$ ЗА КВ.М.<br/>
-                    <span>Самые выгодные цены на жильё в Бишкеке</span>
-                </div>
-            </div>
-        {% endblock %}
     {% endblock %}
 
-    <div class="page_body">
-        {% block content %}
+</div>
 
-        {% endblock %}
+{% block javascripts %}
+    <script src="{% static 'js/jquery-3.1.0.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script>
+        //====================== Vars ===========================
+        var entBtn1 = '.entrance-1';
+        var entBtn2 = '.entrance-2';
 
-
-        {% block footer %}
-            <div class="pre-footer"></div>
-            <!-- ======================== Footer ============================-->
-            <div class="footer">
-                <div class="footer_background">
-
-                </div>
-                <div class="footer_contacts">
-                    <div class="footer_logo">
-                        <img src="{% static 'images/footer_logo.png' %}"/>
-                    </div>
-                    <div class="footer_contact">
-                        <div>Контакты</div>
-                        + 996 312 90 03 15<br/>
-                        + 996 770 53 50 03<br/>
-                        + 996 770 53 50 08
-                    </div>
-                    <div class="footer_address">
-                        <span>НАШ АДРЕС</span> <br/>
-                        <br/>
-                        Кыргызская Республика, 720083<br/>
-                        г. Бишкек, ул. Шабдан Баатыра 2<br/>
-                        (микрорайон Кок-Жар)<br/>
-                        <br/>
-                        E-mail: <a href="mailto:aktulpar2014@yandex.ru" target="_blank">aktulpar2014@yandex.ru</a>
-                    </div>
-                </div>
-            </div>
-        {% endblock %}
-
-    </div>
-
-    {% block javascripts %}
-        <script src="{% static 'js/jquery-3.1.0.min.js' %}"></script>
-        <script src="{% static 'js/bootstrap.js' %}"></script>
-        <script>
-            //====================== Vars ===========================
-            var entBtn1 = '.entrance-1';
-            var entBtn2 = '.entrance-2';
-
-            var ent1Block = '#ent1';
-            var ent2Block = '#ent2';
-            //====================== End Var ========================
-            $(entBtn1).on('click', function () {
-                if (!$(entBtn1).hasClass('entrance_active')) {
-                    $(entBtn2).removeClass('entrance_active');
-                    $(entBtn1).addClass('entrance_active');
-                    $(ent2Block).animate({
-                        opacity: 0
-                    }, 200, function () {
-                        $(ent2Block).fadeOut('fast', function () {
-                            $(ent1Block).fadeIn('fast');
-                            $(ent1Block).animate({
-                                opacity: 1
-                            }, 200);
-                        });
+        var ent1Block = '#ent1';
+        var ent2Block = '#ent2';
+        //====================== End Var ========================
+        $(entBtn1).on('click', function () {
+            if (!$(entBtn1).hasClass('entrance_active')) {
+                $(entBtn2).removeClass('entrance_active');
+                $(entBtn1).addClass('entrance_active');
+                $(ent2Block).animate({
+                    opacity: 0
+                }, 200, function () {
+                    $(ent2Block).fadeOut('fast', function () {
+                        $(ent1Block).fadeIn('fast');
+                        $(ent1Block).animate({
+                            opacity: 1
+                        }, 200);
                     });
-                }
-            });
+                });
+            }
+        });
 
-            $(entBtn2).on('click', function () {
-                if (!$(entBtn2).hasClass('entrance_active')) {
-                    $(entBtn1).removeClass('entrance_active');
-                    $(entBtn2).addClass('entrance_active');
-                    $(ent1Block).animate({
-                        opacity: 0
-                    }, 200, function () {
-                        $(ent1Block).fadeOut('fast', function () {
-                            $(ent2Block).fadeIn('fast');
-                            $(ent2Block).animate({
-                                opacity: 1
-                            }, 200);
-                        });
-
+        $(entBtn2).on('click', function () {
+            if (!$(entBtn2).hasClass('entrance_active')) {
+                $(entBtn1).removeClass('entrance_active');
+                $(entBtn2).addClass('entrance_active');
+                $(ent1Block).animate({
+                    opacity: 0
+                }, 200, function () {
+                    $(ent1Block).fadeOut('fast', function () {
+                        $(ent2Block).fadeIn('fast');
+                        $(ent2Block).animate({
+                            opacity: 1
+                        }, 200);
                     });
-                }
-            });
+
+                });
+            }
+        });
 
 
-
-        </script>
-    {% endblock %}
+    </script>
+{% endblock %}
 </body>
 </html>

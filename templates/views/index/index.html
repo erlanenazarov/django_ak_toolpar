@@ -1,12 +1,15 @@
 {% extends 'views/Base/base.html' %}
 
 {% load staticfiles %}
+
 {% block stylesheets %}
     {{ block.super }}
     <link rel="stylesheet" type="text/css" href="{% static 'css/slick.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'css/slick-theme.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'css/magnific-popup.css' %}" />
 {% endblock %}
+
+
 {% block title %}Главная - OcOO "Ак Тулпар"{% endblock %}
 
 {% block header_image %}
