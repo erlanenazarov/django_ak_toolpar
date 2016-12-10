@@ -60,3 +60,10 @@ def projectingServiceAction(request):
         'location': 'services'
     }
     return render(request, template, params)
+
+
+def projecting_view(request):
+    params = {
+        'location': 'object'
+    }
+    return render(request, 'views/objects/plojecting/projecting.html', params)

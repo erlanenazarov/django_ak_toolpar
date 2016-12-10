@@ -27,12 +27,12 @@ from Building import views as BuildingViews
 
 
 urlpatterns = [
-    url(r'^jet/', include('jet.urls', 'jet')),  # Django JET URLS
     url(r'^admin/', admin.site.urls),
     url(r'^$', TechnicViews.indexAction, name='index'),
     url(r'^services/rent/$', TechnicViews.technicRentAction, name='rent'),
     url(r'^about/$', certificatesView.aboutAction, name='about'),
     url(r'^objects/built$', BuildingViews.builtAction, name='builtObjects'),
+    url(r'^objects/projecting$', BuildingViews.projecting_view, name='projecting_objects'),
     url(r'^objects/in-construction$', BuildingViews.constructionAction, name='constructionObjects'),
     url(r'^object/(?P<id>[0-9]+)', BuildingViews.oneObjectAction, name='buildingEntrance'),
     url(r'^objects/under-construction', BuildingViews.builtAction, name='underConstructions'),

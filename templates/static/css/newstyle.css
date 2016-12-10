@@ -1287,17 +1287,37 @@ body {
 
 .complex-planing ul li div {
     width: 740px;
-    height: 460px;
+    min-height: 460px;
+    height: auto;
     margin: 0 auto;
 }
 
 .complex-planing ul li div img {
-    position: absolute;
+    margin-bottom: 20px;
 }
 
 .complex-planing ul li div canvas {
     position: relative;
     z-index: 1001;
+}
+
+.complex-planing ul li div .planing-render {
+    padding-left: 0;
+}
+
+.complex-planing ul li div .planing-render li {
+    width: 178px;
+    list-style: none;
+    position: relative;
+    display: inline-block;
+}
+
+img {
+    cursor: pointer;
+}
+
+.complex-planing ul li div .planing-render li img {
+    max-width: 100%;
 }
 
 .complex-context {

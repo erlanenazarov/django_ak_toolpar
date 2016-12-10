@@ -1,0 +1,75 @@
+{% extends 'views/Base/base.html' %}
+
+{% load staticfiles %}
+
+{% block stylesheets %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/magnific-popup.css' %}"/>
+{% endblock %}
+
+{% block title %}Проектируемые объекты - OcOO "Ак Тулпар"{% endblock %}
+
+{% block header_image %}
+    <div class="header_image main-image">
+        <div class="page_title">
+            Проектируемые объекты
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="padding-20">
+        <div class="complex-title">Дом 26</div>
+
+        <div class="complex-content">
+            <div class="complex-photos">
+                <ul>
+                    <li><img src="{% static 'images/projecting/26/1.jpg' %}"/></li>
+                    <li><img src="{% static 'images/projecting/26/2.jpg' %}"/></li>
+                    <li><img src="{% static 'images/projecting/26/3.jpg' %}"/></li>
+                    <li><img src="{% static 'images/projecting/26/5.jpg' %}"/></li>
+                    <li><img src="{% static 'images/projecting/26/6.jpg' %}"/></li>
+                    <li><img src="{% static 'images/projecting/26/7.jpg' %}"/></li>
+                    <li><img src="{% static 'images/projecting/26/8.jpg' %}"/></li>
+                    <li><img src="{% static 'images/projecting/26/9.jpg' %}"/></li>
+                    <li><img src="{% static 'images/projecting/26/10.jpg' %}"/></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="complex-title">Дом 28</div>
+
+        <div class="complex-content">
+            <div class="complex-photos">
+                <ul>
+                    <li><img src="{% static 'images/projecting/28/dom28-1.jpg' %}"/></li>
+                    <li><img src="{% static 'images/projecting/28/dom28-2.jpg' %}"/></li>
+                    <li><img src="{% static 'images/projecting/28/dom28-3.jpg' %}"/></li>
+                    <li><img src="{% static 'images/projecting/28/dom28-4.jpg' %}"/></li>
+                    <li><img src="{% static 'images/projecting/28/dom28-5.jpg' %}"/></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ block.super }}
+
+    <script src="{% static 'js/jquery.magnific-popup.js' %}"></script>
+    <script src="{% static 'js/area.js' %}"></script>
+    <script>
+        var magnificTrigger = $('img');
+        var newangle = 0;
+        $(magnificTrigger).bind('click', function (e) {
+            e.preventDefault();
+            $.magnificPopup.open({
+                items: {
+                    src: $(this).attr('src')
+                },
+                type: 'image'
+            });
+        });
+    </script>
+{% endblock %}
