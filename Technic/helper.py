@@ -52,4 +52,4 @@ def transform(path):
 
         return os.path.join(path, filename)
 
-    return wrapped
+    return ''

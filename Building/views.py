@@ -33,7 +33,7 @@ def oneObjectAction(request, id):
     params = {
         'buildings': allBuildings,
         'building': data,
-        'location': 'object'
+        'location': 'objects'
     }
     return render(request, template, params)
 
@@ -64,6 +64,6 @@ def projectingServiceAction(request):
 
 def projecting_view(request):
     params = {
-        'location': 'object'
+        'location': 'objects'
     }
     return render(request, 'views/objects/plojecting/projecting.html', params)
