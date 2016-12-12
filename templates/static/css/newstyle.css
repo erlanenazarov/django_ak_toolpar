@@ -1259,6 +1259,9 @@ body {
     display: inline-block;
     margin-right: 3px;
     margin-bottom: 10px;
+    width: 320px;
+    height: 240px;
+    overflow: hidden;
 }
 
 .complex-photos ul li img {
