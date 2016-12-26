@@ -27,7 +27,6 @@ from Building import views as BuildingViews
 
 
 urlpatterns = [
-    url(r'^jet/', include('jet.urls', 'jet')),  # Django JET URLS
     url(r'^admin/', admin.site.urls),
     url(r'^$', TechnicViews.indexAction, name='index'),
     url(r'^services/rent/$', TechnicViews.technicRentAction, name='rent'),
