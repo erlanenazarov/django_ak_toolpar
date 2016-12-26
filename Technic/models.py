@@ -28,7 +28,8 @@ class Technic(models.Model):
     depthDigging = models.CharField(max_length=255, null=True, blank=True, verbose_name='Глубина копания')
     subCategory = models.CharField(max_length=255, null=True, verbose_name='Название')
     category = models.ForeignKey('TechnicCategory', default=1)
-    price = models.IntegerField(verbose_name='Цена', null=True, blank=True)
+    price = models.IntegerField(verbose_name='Цена без учёта топлива', null=True, blank=True)
+    price_fuel = models.IntegerField(verbose_name='Цена с учётом топлива', null=True, blank=True)
 
     def __unicode__(self):
         return str(self.id) + ' ' + self.title

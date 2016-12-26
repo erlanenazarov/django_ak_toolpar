@@ -7,7 +7,7 @@
 {% block header_image %}
     <div class="header_image image_2">
         <div class="page_title">
-            Аренда<br />
+            Аренда<br/>
             техники
         </div>
         <div class="dark_effect"></div>
@@ -21,7 +21,7 @@
                 <div class="car_machine_hover" drop-target="#{{ category.id }}" drop-toggle="closed">
                     {{ category.title }}
                 </div>
-                <img src="{{ category.preview.url }}" />
+                <img src="{{ category.preview.url }}"/>
             </div>
         {% endfor %}
     </div>
@@ -35,14 +35,18 @@
                                 {{ tech.subCategory }}
                             </div>
                             <div class="tech_good_image">
-                                <div class="tech_good_image_wrap" style="background: url('{{ tech.preview.url }}') center no-repeat; -webkit-background-size: 237px;background-size: 237px; "></div>
+                                <div class="tech_good_image_wrap"
+                                     style="background: url('{{ tech.preview.url }}') center no-repeat; -webkit-background-size: 237px;background-size: 237px; "></div>
                             </div>
                             <div class="tech_good_title">
                                 {{ tech.title }}
                             </div>
                             <div class="tech_good_description text-size-13">
+                                <p class="bold-text text-black-color margin-bottom-4">Цена (С/без учёта топлива):</p>
+                                <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.price }}/{{ tech.price_fuel }}</p>
                                 {% if tech.exploitation %}
-                                    <p class="bold-text text-black-color margin-bottom-4">Эксплуатационная масса, кг:</p>
+                                    <p class="bold-text text-black-color margin-bottom-4">Эксплуатационная масса,
+                                        кг:</p>
                                     <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.exploitation }}</p>
                                 {% endif %}
                                 {% if tech.capacity %}
@@ -99,7 +103,7 @@
                 <div class="car_machine_hover" drop-target="#{{ category.id }}" drop-toggle="closed">
                     {{ category.title }}
                 </div>
-                <img src="{{ category.preview.url }}" />
+                <img src="{{ category.preview.url }}"/>
             </div>
         {% endfor %}
     </div>
@@ -114,14 +118,16 @@
                                 {{ tech.subCategory }}
                             </div>
                             <div class="tech_good_image">
-                                <div class="tech_good_image_wrap" style="background: url('{{ tech.preview.url }}') center no-repeat; -webkit-background-size: 237px;background-size: 237px; "></div>
+                                <div class="tech_good_image_wrap"
+                                     style="background: url('{{ tech.preview.url }}') center no-repeat; -webkit-background-size: 237px;background-size: 237px; "></div>
                             </div>
                             <div class="tech_good_title">
                                 {{ tech.title }}
                             </div>
                             <div class="tech_good_description text-size-13">
                                 {% if tech.exploitation %}
-                                    <p class="bold-text text-black-color margin-bottom-4">Эксплуатационная масса, кг:</p>
+                                    <p class="bold-text text-black-color margin-bottom-4">Эксплуатационная масса,
+                                        кг:</p>
                                     <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.exploitation }}</p>
                                 {% endif %}
                                 {% if tech.capacity %}
@@ -180,22 +186,22 @@
         var drop_lists = $('.car_machine_hover');
 
 
-        $(drop_lists).on('click', function(e) {
-            if($(this).attr('drop-toggle') != 'opened') {
-                $.each($(drop_lists), function() {
-                    if($(this).hasClass('car_machine_active')) {
+        $(drop_lists).on('click', function (e) {
+            if ($(this).attr('drop-toggle') != 'opened') {
+                $.each($(drop_lists), function () {
+                    if ($(this).hasClass('car_machine_active')) {
                         $(this).removeClass('car_machine_active');
                         $(this).attr('drop-toggle', 'closed');
                     }
                     $($(this).attr('drop-target')).fadeOut('fast');
                 });
-                if(!$(this).hasClass('car_machine_active')) {
+                if (!$(this).hasClass('car_machine_active')) {
                     $(this).addClass('car_machine_active');
                 }
                 $($(this).attr('drop-target')).fadeIn('slow');
                 $(this).attr('drop-toggle', 'opened');
             } else {
-                if($(this).hasClass('car_machine_active')) {
+                if ($(this).hasClass('car_machine_active')) {
                     $(this).removeClass('car_machine_active');
                 }
                 $($(this).attr('drop-target')).fadeOut('slow');
