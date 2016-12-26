@@ -42,8 +42,8 @@
                                 {{ tech.title }}
                             </div>
                             <div class="tech_good_description text-size-13">
-                                <p class="bold-text text-black-color margin-bottom-4">Цена за 1м/час (С/без учёта топлива):</p>
-                                <p class="regular-text text-black-light-color margin-bottom-4">{{ tech.price }}/{{ tech.price_fuel }}</p>
+                                <p class="bold-text text-black-color margin-bottom-4">Цена за 1м/час:</p>
+                                <p class="regular-text text-black-light-color margin-bottom-4">С топливом: {{ tech.price }} / Без топлива{{ tech.price_fuel }}</p>
                                 {% if tech.exploitation %}
                                     <p class="bold-text text-black-color margin-bottom-4">Эксплуатационная масса,
                                         кг:</p>
